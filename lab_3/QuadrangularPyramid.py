@@ -3,7 +3,7 @@ import math
 
 class QuadrangularPyramid(Rectangle):
     def __init__(self, a, b, h):
-        super().__init__(a, a)
+        super().__init__(a, b)
         self.h = h
 
     def dimension(self):

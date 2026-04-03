@@ -8,7 +8,7 @@ class Circle(Figure):
     def dimension(self):
         return 2
 
-    def perimeter(self):
+    def perimetr(self):
         return math.pi*self.r*2
 
     def square(self):

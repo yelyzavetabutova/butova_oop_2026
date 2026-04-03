@@ -8,10 +8,10 @@ class Triangle(Figure):
         self.c = c
     def dimension(self):
         return 2
-    def perimeter(self):
+    def perimetr(self):
         return self.a + self.b + self.c
     def square(self):
-        p = self.perimeter()/2
-        return math.sqrt(p*(p-self.a)*(p-self.b)*(p-self.c))
+        p = self.perimetr()/2
+        return math.sqrt(abs(p * (p - self.a) * (p - self.b) * (p - self.c)))
     def volume(self):
         return self.square()

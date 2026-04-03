@@ -1,0 +1,3 @@
+File input01.txt: Max measure = 65449.85 (Ball)
+File input02.txt: Max measure = 65449.85 (Ball)
+File input03.txt: Max measure = 65449.85 (Ball)

@@ -11,10 +11,11 @@ class Trapeze(Figure):
     def dimension(self):
         return 2
 
-    def perimeter(self):
+    def perimetr(self):
         return self.a+self.b+self.c+self.d
 
     def square(self):
+        if self.a == self.b: return 0.0
         d = 4 * abs(self.a - self.b)
         term1 = -self.a + self.b + self.c + self.d
         term2 = self.a - self.b + self.c + self.d
