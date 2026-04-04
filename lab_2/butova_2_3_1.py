@@ -1,23 +1,4 @@
 import turtle
-import random
-
-class Figure:
-    def __init__(self, x, y, color):
-        self.x = x
-        self.y = y
-        self.color = color
-        self.angle = 0
-        self.t = turtle.Turtle()
-        self.t.hideturtle()
-        self.t.speed(0)
-
-    def draw(self):
-        self.t.clear()
-        self.t.penup()
-        self.t.goto(self.x, self.y)
-        self.t.setheading(self.angle)
-        self.t.pendown()
-        self._render()
 
 class Petal:
     def draw(self, t, color):
@@ -39,45 +20,43 @@ class Leaf:
         t.circle(10)
         t.end_fill()
 
-class Flower(Figure):
-    def __init__(self, x, y, color):
-        super().__init__(x, y, color)
+class Flower:
+    def __init__(self):
         self.p = Petal()
         self.s = Stem()
         self.l = Leaf()
 
-    def _render(self):
-        base_angle = self.t.heading()
-
-        self.t.setheading(base_angle - 90)
-        self.s.draw(self.t)
-
-        self.t.penup()
-        self.t.goto(self.x, self.y - 50)
-        self.t.pendown()
-        self.l.draw(self.t)
-
-        self.t.penup()
-        self.t.goto(self.x, self.y)
-        self.t.setheading(base_angle)
-        self.t.pendown()
+    def draw(self, t, x, y, color):
+        t.penup()
+        t.goto(x, y)
+        t.setheading(0)
+        t.pendown()
+        self.s.draw(t)
+        t.penup()
+        t.goto(x, y - 50)
+        t.pendown()
+        self.l.draw(t)
+        t.penup()
+        t.setheading(0)
+        t.goto(x, y)
+        t.pendown()
         for _ in range(6):
-            self.p.draw(self.t, self.color)
-            self.t.right(60)
+            self.p.draw(t, color)
+            t.right(60)
 
-n = int(input("Скільки квіток? "))
-bouquet = []
+t = turtle.Turtle()
+t.speed(0)
+f = Flower()
+
+n_input = input("Скільки квіток? ")
+n = int(n_input) if n_input.isdigit() else 0
+
+vidstan = 100
+start_x = -(n - 1) * vidstan / 2
 
 for i in range(n):
-    f = Flower(-200 + i*150, 0, "red")
-    f.draw()
-    bouquet.append(f)
+    x_pos = start_x + (i * vidstan)
+    f.draw(t, x_pos, 0, "red")
 
-for _ in range(20):
-    for f in bouquet:
-        f.x += 5
-        f.y += 5
-        f.angle += 15
-        f.draw()
-
+t.hideturtle()
 turtle.done()
