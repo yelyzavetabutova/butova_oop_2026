@@ -47,7 +47,7 @@ def solve_expression(expression):
     expressions = " ".join(new_ex)
     return eval(expressions)
 
-with open('input01.txt', 'r') as file_input, open('output.txt', 'w') as file_output:
+with open('input1.txt', 'r') as file_input, open('output_1.txt', 'w') as file_output:
     for line in file_input:
         line = line.strip()
         if line:
