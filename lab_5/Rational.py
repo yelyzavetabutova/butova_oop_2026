@@ -47,11 +47,12 @@ def solve_expression(expression):
     expressions = " ".join(new_ex)
     return eval(expressions)
 
-with open('input1.txt', 'r') as file_input, open('output_1.txt', 'w') as file_output:
-    for line in file_input:
-        line = line.strip()
-        if line:
-            result = solve_expression(line)
-            print(f"Expression: {line}", file=file_output)
-            print(f"Result: {result}", file=file_output)
+if __name__ == "__main__":
+    with open('input1.txt', 'r') as file_input, open('output_1.txt', 'w') as file_output:
+       for line in file_input:
+            line = line.strip()
+            if line:
+                result = solve_expression(line)
+                print(f"Expression: {line}", file=file_output)
+                print(f"Result: {result}", file=file_output)
 

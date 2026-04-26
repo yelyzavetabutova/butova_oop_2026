@@ -1,4 +1,7 @@
-from Rational import Rational
+try:
+    from lab_5.Rational import Rational
+except ImportError:
+    from Rational import Rational
 class RationalList:
     def __init__(self, data=None):
         if data is None:
