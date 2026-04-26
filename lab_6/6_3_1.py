@@ -32,11 +32,11 @@ class RationalList(BaseRationalList):
 filenames = ["input01.txt", "input02.txt", "input03.txt"]
 for name in filenames:
     r_list = RationalList()
-    r_list.elements = []g
-        with open(name, 'r') as f:
-            for word in f.read().split():
-                r_list += Rational(word)
+    r_list.elements = []
+    with open(name, 'r') as f:
+        for word in f.read().split():
+            r_list += Rational(word)
 
-        print(f"\n Результати для файлу: {name}")
-        for r in r_list:
-            print(f"Число: {r} (n={r.n}, d={r.d})")
+    print(f"\n Результати для файлу: {name}")
+    for r in r_list:
+        print(f"Число: {r} (n={r.n}, d={r.d})")
