@@ -32,9 +32,7 @@ class RationalList(BaseRationalList):
 filenames = ["input01.txt", "input02.txt", "input03.txt"]
 for name in filenames:
     r_list = RationalList()
-    r_list.elements = []
-
-    try:
+    r_list.elements = []g
         with open(name, 'r') as f:
             for word in f.read().split():
                 r_list += Rational(word)
@@ -42,6 +40,3 @@ for name in filenames:
         print(f"\n Результати для файлу: {name}")
         for r in r_list:
             print(f"Число: {r} (n={r.n}, d={r.d})")
-
-    except FileNotFoundError:
-        print(f"Файл {name} не знайдено")
