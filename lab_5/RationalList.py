@@ -50,21 +50,21 @@ class RationalList:
         else:
             raise TypeError("Can't add")
         return self
+if __name__ == "__main__":
+    filenames = ["input01.txt", "input02.txt", "input03.txt"]
+    for name in filenames:
+       r_list = RationalList()
+       with open(name, 'r') as f_input:
+           for line in f_input:
+               for word in line.split():
+                   if word in "+-*":
+                       continue
+                   r_list += Rational(word)
+       total_sum = Rational(0, 1)
+       for r in r_list.elements:
+           total_sum = total_sum + r
 
-filenames = ["input01.txt", "input02.txt", "input03.txt"]
-for name in filenames:
-    r_list = RationalList()
-    with open(name, 'r') as f_input:
-        for line in f_input:
-            for word in line.split():
-                if word in "+-*":
-                    continue
-                r_list += Rational(word)
-    total_sum = Rational(0, 1)
-    for r in r_list.elements:
-        total_sum = total_sum + r
-
-    output_name = name.replace("input", "output")
-    with open(output_name, 'w') as f_output:
-        print(f"File: {name}", file=f_output)
-        print(f"Sum: {total_sum}", file=f_output)
+       output_name = name.replace("input", "output")
+       with open(output_name, 'w') as f_output:
+           print(f"File: {name}", file=f_output)
+           print(f"Sum: {total_sum}", file=f_output)
