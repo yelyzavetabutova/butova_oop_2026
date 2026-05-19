@@ -71,7 +71,7 @@ def run_simulation(file_name: str):
             if student.is_expelled == True:
                 break
 
-    print(f"--- Результат для файлу: {file_name} ---")
+    print(f"Результат для файлу: {file_name}")
     if student.is_expelled == True:
         print("Статус: Студента відраховано.")
         print(f"Грошей залишилося: {student.money} грн")
