@@ -42,7 +42,7 @@ def parse_action(line: str):
     return None
 
 def run_simulation(file_name: str):
-    file = open(file_name, "r", encoding="utf-8")
+    file = open(file_name, "r")
     lines = file.readlines()
     file.close()
 
